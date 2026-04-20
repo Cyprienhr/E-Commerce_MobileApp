@@ -37,7 +37,6 @@ const LoginScreen = () => {
     setLoading(true);
     try {
       await login(username, password);
-      // Navigation will be handled by the root navigator
     } catch (error) {
       Alert.alert('Login Failed', error instanceof Error ? error.message : 'Invalid username or password');
     } finally {
@@ -48,7 +47,6 @@ const LoginScreen = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle();
-      // Navigation will be handled by the root navigator
     } catch {
       Alert.alert('Google Sign-In Failed', 'Please try again');
     }

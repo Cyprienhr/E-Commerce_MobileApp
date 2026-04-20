@@ -1,7 +1,5 @@
-// import AsyncStorage from '@react-native-async-storage/async-storage'; // Temporarily disabled
-import { CartItem, Product } from '../types';
 
-// const STORAGE_KEY = 'cart';
+import { CartItem, Product } from '../types';
 
 class CartService {
   private cartItems: CartItem[] = [];
@@ -12,7 +10,7 @@ class CartService {
 
   private loadCart() {
     try {
-      // Mock implementation - do nothing for now
+      
     } catch (error) {
       console.error('Error loading cart:', error);
     }
@@ -20,7 +18,7 @@ class CartService {
 
   private saveCart() {
     try {
-      // Mock implementation - do nothing for now
+     
     } catch (error) {
       console.error('Error saving cart:', error);
     }

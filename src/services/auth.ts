@@ -1,15 +1,12 @@
-// Mock AsyncStorage implementation for now
+
 const AsyncStorage = {
   getItem: async (_key: string) => {
-    // Mock implementation - return null for now
     return Promise.resolve(null);
   },
   setItem: async (_key: string, _value: string) => {
-    // Mock implementation - do nothing for now
     return Promise.resolve();
   },
   removeItem: async (_key: string) => {
-    // Mock implementation - do nothing for now
     return Promise.resolve();
   },
 };
@@ -47,12 +44,11 @@ class AuthService {
 
   async login(username: string, password: string): Promise<AuthUser> {
     try {
-      // Try login with FakeStoreAPI first
       const response = await userService.loginUser(username, password);
       
       const authUser: AuthUser = {
         user: {
-          id: 1, // Mock user ID since API doesn't return full user
+          id: 1,
           email: `${username}@example.com`,
           username,
           name: {
@@ -68,7 +64,6 @@ class AuthService {
       
       return authUser;
     } catch {
-      // Fallback to temp users
       const user = this.tempUsers.find(u => u.username === username);
       if (user) {
         const authUser: AuthUser = {
@@ -87,7 +82,7 @@ class AuthService {
 
   async signup(userData: SignupData): Promise<AuthUser> {
     const newUser: User = {
-      id: this.tempUsers.length + 2, // Start from 2 to avoid conflicts
+      id: this.tempUsers.length + 2,
       email: userData.email,
       username: userData.username,
       name: userData.name,
@@ -144,10 +139,8 @@ class AuthService {
     }
   }
 
-  // Google Sign-In placeholder
   async signInWithGoogle(): Promise<AuthUser> {
-    // This would integrate with @react-native-google-signin/google-signin
-    // For now, return a mock user
+    
     const mockUser: User = {
       id: Date.now(),
       email: 'googleuser@gmail.com',

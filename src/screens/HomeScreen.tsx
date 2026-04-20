@@ -43,7 +43,7 @@ const HomeScreen = () => {
       setProducts(productsData);
       setCategories(['all', ...categoriesData]);
     } catch {
-      // Handle error silently for now
+
     } finally {
       setLoading(false);
     }
@@ -59,7 +59,7 @@ const HomeScreen = () => {
         setProducts(productsData);
       }
     } catch {
-      // Handle error silently for now
+    
     }
   }, [selectedCategory]);
 

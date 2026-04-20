@@ -1,10 +1,9 @@
 import { AuthUser, User, SignupData } from '../types';
 
-// Simple in-memory authentication service
 class SimpleAuthService {
   private currentUser: AuthUser | null = null;
   private users: User[] = [
-    // Add a default test user for easy login
+
     {
       id: 1,
       email: 'test@example.com',
@@ -152,7 +151,6 @@ class SimpleAuthService {
     return authUser;
   }
 
-  // Get all registered users
   getAllUsers(): User[] {
     return this.users;
   }

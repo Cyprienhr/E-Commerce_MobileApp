@@ -7,7 +7,6 @@ import TabIcon from '../components/TabIcon';
 import { COLORS } from '../constants';
 import { AuthProvider, useAuth } from '../context/AuthContext';
 
-// Import screens
 import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
 import SignupScreen from '../screens/auth/SignupScreen';
@@ -101,7 +100,7 @@ const RootNavigator = () => {
   const { isAuthenticated, isLoading } = useAuth();
 
   if (isLoading) {
-    return null; // Or a loading screen
+    return null;
   }
 
   return (

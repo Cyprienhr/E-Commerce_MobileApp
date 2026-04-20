@@ -15,9 +15,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// Mock auth service for now
 const mockAuthService = {
-  isAuthenticated: () => false, // Start with login screen
+  isAuthenticated: () => false,
   getCurrentUser: () => null,
   logout: () => {},
 };
@@ -87,14 +86,13 @@ const WorkingRootNavigator = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check auth status
     const authenticated = mockAuthService.isAuthenticated();
     setIsAuthenticated(authenticated);
     setIsLoading(false);
   }, []);
 
   if (isLoading) {
-    return null; // Or a loading screen
+    return null;
   }
 
   return (
