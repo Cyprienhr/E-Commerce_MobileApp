@@ -49,11 +49,11 @@ class AuthService {
       const authUser: AuthUser = {
         user: {
           id: 1,
-          email: `${username}@example.com`,
+          email: `${username}@gmail.com`,
           username,
           name: {
-            firstname: 'John',
-            lastname: 'Doe',
+            firstname: 'Cyprien',
+            lastname: 'Dora',
           },
         },
         token: response.token,
